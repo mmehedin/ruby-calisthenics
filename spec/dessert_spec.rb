@@ -1,7 +1,7 @@
 require 'dessert'
 require 'byebug'
 
-describe Dessert, :pending => true do
+describe Dessert do
   describe 'cake' do
     before :each do
       @subject = Dessert.new('cake', 400)
@@ -19,6 +19,7 @@ describe Dessert, :pending => true do
       expect(@subject).not_to be_healthy
     end
   end
+  
   describe 'apple' do
     before :each do
       @subject = Dessert.new('apple', 75)
@@ -43,7 +44,7 @@ describe Dessert, :pending => true do
   end
 end
 
-describe JellyBean, :pending => true do
+describe JellyBean do
   describe 'when non-licorice' do
     before :each do
       @subject = JellyBean.new('vanilla')
