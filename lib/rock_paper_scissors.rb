@@ -29,6 +29,16 @@ class RockPaperScissors
 
   def self.tournament_winner(tournament)
     # YOUR CODE HERE
+    
+    if !((tournament[0][0].is_a? Array) && (tournament[0][1].is_a? Array))
+        #print tournament[0]+tournament[1]
+        puts
+        
+        return self.winner(tournament[0], tournament[1])
+    end
+    
+    
+       return self.winner(self.tournament_winner(tournament[0]), self.tournament_winner(tournament[1]))
   end
 
 end

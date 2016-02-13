@@ -55,6 +55,35 @@ module FunWithStrings
   end
 end
 
+
+#test using regex. not working with repeating letters
+def anagram_groups_regex
+# your code here
+
+  array_word=[] #the array containing individual words
+  @s = self.gsub(/[^a-zA-Z\s]/, '')
+  array_word = @s.downcase.split(' ')
+  if array_word.empty?
+      return array_word # return the empty array as promised
+  else
+    array_anagram =Array.new([[]])
+    array_word.each do |word|
+      temp = Array.new()
+      array_word.each do |x|
+          if !(word =~ /[^#{x}]/) && !(x =~ /[^#{word}]/) #test using the current word as a regex character sequence
+              temp.push(x)
+          end
+      end
+      array_anagram.push(temp)
+    end
+
+  end
+array_anagram #returning the final array
+
+end
+
+
+
 # make all the above functions available as instance methods on Strings:
 
 class String
